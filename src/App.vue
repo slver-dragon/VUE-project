@@ -43,39 +43,33 @@ export default {
 };
 </script>
 
-<style lang="css">
-  .app {
-    display: flex;
-    margin: 30% auto;
-    background-color: #444;
-  }
+<style lang="sass">
+  #app 
+    display: flex
+    margin: auto
+    background-color: #444
 
-  .page {
-    display: flex;
-    flex-direction: column;
-    width: 31%;
-    height: 40%;
-    margin: 0.5% auto;
-    padding: 1rem;
-    background: #ccc;
-    border: 0.125rem solid #000;
-  }
+    .page 
+      display: flex
+      flex-direction: column
+      width: 31%
+      height: 40%
+      margin: 0.5% auto
+      padding: 1rem
+      background: #ccc
+      border: 0.125rem solid #000
 
-  span {
-    font-size: 2.25vw;
-    margin: 0% auto;
-  }
+      span 
+        font-size: 2.25vw
+        margin: 0% auto
 
-  label {
-    font-size: 2.5vw;
-    vertical-align: middle;
-    margin: 1% 0.5%;
-  }
+      label 
+        font-size: 2.5vw
+        vertical-align: middle
+        margin: 1% 0.5%
 
-  input {
-    transform: scale(1.75);
-    vertical-align: middle;
-    margin: 1%;
-  }
-
+      input 
+        transform: scale(1.75)
+        vertical-align: middle
+        margin: 1%
 </style>
