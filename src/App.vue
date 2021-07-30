@@ -2,19 +2,36 @@
   <div id="app">
     <div class="page">
       <span class="title block">to do list</span>
-      <label class="element">
-        <input type="checkbox" class="input-point" id="task-1" />
-        <span class="check-box"></span>Learn React!
+      <label class="element ready">
+        <div class="task">
+          <input type="checkbox" class="input-point" checked />
+          <span class="check-box"></span>Task 1
+        </div>
+        <span class="deleter"></span>
       </label>
-      <label class="element">
-        <input type="checkbox" class="input-point" id="task-2" />
-        <span class="check-box"></span>Make HomeWork!
+      <label class="element ready">
+        <div class="task">
+          <input type="checkbox" class="input-point" />
+          <span class="check-box"></span>Task 2
+        </div>
+        <span class="deleter"></span>
       </label>
-      <label class="element">
-        <input type="checkbox" class="input-point" id="task-3" />
-        <span class="check-box"></span>Relaxation!
+      <label class="element ready">
+        <div class="task">
+          <input type="checkbox" class="input-point" />
+          <span class="check-box"></span>Task 3
+        </div>
+        <span class="deleter"></span>
       </label>
-      <span class="footer block"></span>
+      <label class="element new">Add a new task</label>
+      <span class="footer block">
+        <p>1/3 left</p>
+        <ul class="sorting">
+          <li>All</li>
+          <li>Active</li>
+          <li>Complete</li>
+        </ul>
+      </span>
     </div>
   </div>
 </template>
@@ -29,117 +46,12 @@ export default {
 
 <style lang="scss">
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap");
-
-$myFont: "Open Sans";
-$border: 0.0625rem solid #000;
-$permission: 62rem,31rem;
+@import "../src/assets/styles/style.scss";
 
 #app {
   display: flex;
   margin: auto;
-  background-color: #e5e5e5;
+  background: linear-gradient(90deg, #ff7e5f, #feb567);
 }
 
-.page {
-  display: flex;
-  flex-direction: column;
-  width: 21%;
-  height: 40%;
-  margin: 0.5% auto;
-  background: #ccc;
-  border: $border;
-
-  .block {
-    font-family: $myFont;
-    font-size: 1.25rem;
-    font-weight: 600;
-    text-align: center;
-    background: #aaa;
-  }
-
-  .title {
-    border-bottom: $border;
-  }
-
-  .element {
-    font-size: 1.25rem;
-    font-weight: 400;
-    margin: 1% 0.5%;
-    padding-left: 1.2em;
-    background-color: #bbb;
-    border-radius: 5%;
-
-    .input-point {
-      margin: 1%;
-      -webkit-appearance: none;
-      -moz-appearance: none;
-    }
-
-    .check-box {
-      display: inline-block;
-      width: 0.5em;
-      height: 0.5em;
-      border: 0.1em solid black;
-      border-radius: 50%;
-      position: relative;
-      margin-right: 0.5em;
-    }
-
-    .check-box:before {
-      display: block;
-      content: "";
-      position: absolute;
-      width: 0.3em;
-      height: 0.3em;
-      top: 0.1em;
-      left: 0.1em;
-      background-color: black;
-      border-radius: 50%;
-      opacity: 0;
-    }
-
-    .input-point:checked + .check-box:before {
-      opacity: 1;
-    }
-
-    .footer {
-      border-top: $border;
-    }
-  }
-}
-
-@media (max-width: nth($permission,1)) {
-  .page {
-    width: 50%;
-  }
-}
-
-@media (max-width: nth($permission,2)) {
-  .page {
-    width: 100%;
-  }
-}
 </style>
-
-<!--<div class="page">
-      <label class="element">
-        <span class="check-box"></span>
-        <input class="input-point" type="checkbox" id="one" value="Learn React!" checked />Learn React!
-      </label>
-      <br />
-      <label class="element">
-        <span class="check-box"></span>
-        <input class="input-point" type="checkbox" id="two" value="Make HomeWork!" />Make HomeWork!
-      </label>
-      <br />
-      <label class="element">
-        <span class="check-box"></span>
-        <input class="input-point" type="checkbox" id="three" value="Relaxation!" />Relaxation!
-      </label>
-      <br />
-      <span class="task-list">What needs to be done?</span>
-      <br />
-      <span class="task-list">{{ checkedNames }}</span>
-    </div>-->
-
-<!---->
