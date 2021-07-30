@@ -152,14 +152,6 @@
   }
 }
 
-@media (max-width: nth($permission,1)) {
-  .page {
-    width: 50%;
-  }
-}
+@include permissionBorder(1, 50%);
 
-@media (max-width: nth($permission,2)) {
-  .page {
-    width: 100%;
-  }
-}
+@include permissionBorder(2, 100%);
