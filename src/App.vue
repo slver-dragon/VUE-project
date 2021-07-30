@@ -23,14 +23,26 @@
         </div>
         <span class="deleter"></span>
       </label>
-      <label class="element new">Add a new task</label>
+      <input class="element new" type="button" value="Add a new task" />
       <span class="footer block">
         <p>1/3 left</p>
-        <ul class="sorting">
-          <li>All</li>
-          <li>Active</li>
-          <li>Complete</li>
-        </ul>
+        <div class="sorting">
+          <label class="sorting-button"
+            ><input type="radio" name="sorter" checked /><span class="sorting-type"
+              >All</span
+            ></label
+          >
+          <label class="sorting-button"
+            ><input type="radio" name="sorter" /><span class="sorting-type"
+              >Active</span
+            ></label
+          >
+          <label class="sorting-button"
+            ><input type="radio" name="sorter" /><span class="sorting-type"
+              >Complete</span
+            ></label
+          >
+        </div>
       </span>
     </div>
   </div>
@@ -45,7 +57,6 @@ export default {
 </script>
 
 <style lang="scss">
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap");
 @import "../src/assets/styles/style.scss";
 
 #app {
@@ -53,5 +64,4 @@ export default {
   margin: auto;
   background: linear-gradient(90deg, #ff7e5f, #feb567);
 }
-
 </style>

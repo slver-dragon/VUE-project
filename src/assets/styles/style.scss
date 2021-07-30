@@ -1,15 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap");
 @import "variables";
 @import "mixin";
-
-#app {
-  display: flex;
-  margin: auto;
-  background: linear-gradient(90deg, #ff7e5f, #feb567);
-}
 
 .page {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   width: 33.625em;
   height: 27.188em;
   margin: 0.5% auto;
@@ -104,7 +100,7 @@
 
     .deleter {
       display: inline-block;
-      width: 1em;
+      width: 1.16em;
       height: 1em;
       color: #feb567;
       border: 0.1em solid #feb567;
@@ -127,15 +123,26 @@
     display: flex;
     justify-content: space-around;
     border-top: $border;
+    margin-top: 1em;
 
     .sorting {
       display: flex;
       justify-content: space-between;
-      width: 50%;
+      width: 60%;
 
-      li {
-        list-style-type: none;
+      input[type=radio] {
+        display: none;
       }
+
+      .sorting-button {
+        border: none;
+
+        input[type=radio]:checked + .sorting-type {
+          border: 0.125rem solid #7f4b13;
+          border-radius: 0.3em;
+        }
+      }
+
     }
   }
 

@@ -1,9 +1,9 @@
 @import "variables";
 
-@mixin permissionBorder ($permissNumber, $workWidth) {
+@mixin permissionBorder($permissNumber, $workWidth) {
   @media (max-width: nth($permission, $permissNumber)) {
-  .page {
-    width: $workWidth;
+    .page {
+      width: $workWidth;
+    }
   }
-}
 }
