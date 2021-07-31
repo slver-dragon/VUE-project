@@ -1,5 +1,8 @@
 <template>
   <div id="app">
+    <div class="fon">
+
+    </div>
     <div class="page">
       <span class="title block">to do list</span>
       <label class="element ready">
@@ -61,7 +64,10 @@ export default {
 
 #app {
   display: flex;
+  align-items: center;
   margin: auto;
+  min-height: 640px;
   background: linear-gradient(90deg, #ff7e5f, #feb567);
+  position: relative;
 }
 </style>

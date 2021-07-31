@@ -2,6 +2,16 @@
 @import "variables";
 @import "mixin";
 
+.fon {
+  width: 25rem;
+  height: 32rem;
+  background: url(../src/assets/img/back.png);
+  position: absolute;
+  left: 56vw;
+  align-items: center;
+  z-index: 0;
+}
+
 .page {
   display: flex;
   flex-direction: column;
@@ -11,6 +21,7 @@
   margin: 0.5% auto;
   background: #fff4e9;
   border: $border;
+  z-index: 1;
 
   .block {
     display: flex;
