@@ -5,5 +5,9 @@
     .page {
       width: $workWidth;
     }
+
+    .footer {
+      font-size: 1.25rem + 0.25rem * (1  - $permissNumber);
+    }
   }
 }
