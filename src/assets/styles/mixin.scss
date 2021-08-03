@@ -4,10 +4,15 @@
   @media (max-width: nth($permission, $permissNumber)) {
     .page {
       width: $workWidth;
-    }
 
-    .footer {
-      font-size: 1.25rem + 0.25rem * (1  - $permissNumber);
+      .deleter {
+        left: 0em;
+        left: 29.5vw;/* - $permissNumber * 5vw;*/
+      }
+
+      .footer {
+        font-size: 1.25rem + 0.25rem * (1  - $permissNumber);
+      }
     }
   }
 }

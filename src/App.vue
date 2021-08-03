@@ -7,28 +7,29 @@
           <input type="checkbox" class="input-point" checked />
           <span class="check-box"></span>Task 1
         </div>
-        <span class="deleter"></span>
       </label>
+      <span class="deleter"></span>
       <label class="element ready">
         <div class="task">
           <input type="checkbox" class="input-point" />
           <span class="check-box"></span>Task 2
         </div>
-        <span class="deleter"></span>
       </label>
+      <span class="deleter"></span>
       <label class="element ready">
         <div class="task">
           <input type="checkbox" class="input-point" />
           <span class="check-box"></span>Task 3
         </div>
-        <span class="deleter"></span>
       </label>
-      <input class="element new" type="text" value="Add a new task" />
+      <span class="deleter"></span>
+      <input class="element new" type="text" placeholder="Add a new task" />
       <span class="footer block">
         <p>1/3 left</p>
         <div class="sorting">
           <label class="sorting-button"
-            ><input type="radio" name="sorter" checked /><span class="sorting-type"
+            ><input type="radio" name="sorter" checked /><span
+              class="sorting-type"
               >All</span
             ></label
           >
@@ -57,15 +58,15 @@ export default {
 </script>
 
 <style lang="scss">
-@import "../src/assets/styles/style.scss";
-@import "../src/assets/styles/reset.scss";
+@import "./assets/styles/style.scss";
+@import "./assets/styles/reset.scss";
 
 #app {
   display: flex;
   align-items: center;
   margin: auto;
   height: 100vh;
-  background: url(../src/assets/img/back.png) no-repeat center center;
+  background: url(./assets/img/back.png) no-repeat center center;
   background-size: cover;
   position: relative;
 }
@@ -74,7 +75,7 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 33.625em;
+  min-width: 33.625em;
   height: 27.188em;
   margin: 0.5% auto;
   background: #fff4e9;
@@ -93,7 +94,7 @@ export default {
 
   .title {
     font-size: 1.25rem;
-    margin-bottom: 1em;
+    margin-bottom: 1.75em;
   }
 
   .element {
@@ -105,7 +106,7 @@ export default {
     font-weight: 400;
     width: 89.22%;
     height: 11.495%;
-    margin: 2.8604% 5.5556%;
+    margin: 0.25% 5.5556%;
     border-radius: 0.3em;
 
     .task {
@@ -164,51 +165,53 @@ export default {
         opacity: 1;
       }
     }
+  }
 
-    .deleter {
-      display: inline-block;
-      width: 1.16em;
-      height: 1em;
-      color: #feb567;
-      border: 0.1em solid #feb567;
-      border-radius: 25%;
-      vertical-align: middle;
-      position: relative;
-      margin-right: 0.8em;
-    }
+  .deleter {
+    display: inline-block;
+    width: 1.2em;
+    height: 1.3em;
+    color: #feb567;
+    border: 0.1em solid #feb567;
+    border-radius: 25%;
+    vertical-align: middle;
+    position: relative;
+    margin-right: 0.8em;
+    top: -2.25em;
+    left: 29.5em;
+  }
 
-    .deleter:before {
-      content: "\00D7";
-      top: -0.22em;
-      left: 0.22em;
-      position: absolute;
-      margin-right: 0.8em;
-    }
+  .deleter:before {
+    content: "\00D7";
+    top: 0.16em;
+    left: 0.35em;
+    position: absolute;
+    margin-right: 0.8em;
   }
 
   .footer {
     display: flex;
     justify-content: space-around;
-    margin-top: 1em;
+    margin-top: 1.75em;
 
     .sorting {
       display: flex;
       justify-content: space-between;
       width: 60%;
 
-      input[type=radio] {
+      input[type="radio"] {
         display: none;
       }
 
       .sorting-button {
         border: none;
 
-        input[type=radio]:checked + .sorting-type {
+        input[type="radio"]:checked + .sorting-type {
           border: 0.125rem solid #7f4b13;
           border-radius: 0.3em;
+          padding: 0.125rem 0.25rem;
         }
       }
-
     }
   }
 
