@@ -1,30 +1,33 @@
 <template>
   <div id="app">
     <div class="page">
-      <span class="title block">to do list</span>
-      <label class="element ready">
-        <div class="task">
-          <input type="checkbox" class="input-point" checked />
-          <span class="check-box"></span>Task 1
+      <div class="title">to do list</div>
+      <div class="content">
+        <div class="taskContainer">
+          <label class="task">
+            <input type="checkbox" class="input-point" checked />
+            <span class="check-box"></span>dsjdsljfl aflkdsfaklfdsl
+            kkldfkldhlksd
+          </label>
+          <div class="deleter"></div>
         </div>
-      </label>
-      <span class="deleter"></span>
-      <label class="element ready">
-        <div class="task">
-          <input type="checkbox" class="input-point" />
-          <span class="check-box"></span>Task 2
+        <div class="taskContainer">
+          <label class="task">
+            <input type="checkbox" class="input-point" />
+            <span class="check-box"></span>Task 2
+          </label>
+          <div class="deleter"></div>
         </div>
-      </label>
-      <span class="deleter"></span>
-      <label class="element ready">
-        <div class="task">
-          <input type="checkbox" class="input-point" />
-          <span class="check-box"></span>Task 3
+        <div class="taskContainer">
+          <label class="task">
+            <input type="checkbox" class="input-point" />
+            <span class="check-box"></span>Task 3
+          </label>
+          <div class="deleter"></div>
         </div>
-      </label>
-      <span class="deleter"></span>
-      <input class="element new" type="text" placeholder="Add a new task" />
-      <span class="footer block">
+        <input class="new" type="text" placeholder="Add a new task" />
+      </div>
+      <div class="footer block">
         <p>1/3 left</p>
         <div class="sorting">
           <label class="sorting-button"
@@ -44,7 +47,7 @@
             ></label
           >
         </div>
-      </span>
+      </div>
     </div>
   </div>
 </template>
@@ -62,169 +65,156 @@ export default {
 @import "./assets/styles/reset.scss";
 
 #app {
-  display: flex;
-  align-items: center;
-  margin: auto;
   height: 100vh;
   background: url(./assets/img/back.png) no-repeat center center;
   background-size: cover;
-  position: relative;
-}
+  padding-top: 5rem;
 
-.page {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-width: 33.625em;
-  height: 27.188em;
-  margin: 0.5% auto;
-  background: #fff4e9;
-  z-index: 1;
+  .page {
+    margin: 0 auto;
+    max-width: 33.75rem;
+    background: #fff4e9;
+    font-family: $myFontFamily;
+    color: $myFontColor;
 
-  .block {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: $myFont;
-    color: #7f4b13;
-    font-weight: 600;
-    background: #ffca93;
-    height: 11.495%;
-  }
-
-  .title {
-    font-size: 1.25rem;
-    margin-bottom: 1.75em;
-  }
-
-  .element {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    font-family: $myFont;
-    font-size: 1.25rem;
-    font-weight: 400;
-    width: 89.22%;
-    height: 11.495%;
-    margin: 0.25% 5.5556%;
-    border-radius: 0.3em;
-
-    .task {
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      width: 100%;
-      margin-left: 0.8em;
-
-      .input-point {
-        display: none;
-      }
-
-      .check-box {
-        display: inline-block;
-        width: 1em;
-        height: 1em;
-        border: 0.1em solid #feb567;
-        border-radius: 25%;
-        position: relative;
-        margin-right: 0.5em;
-        vertical-align: middle;
-      }
-
-      .check-box:before {
-        display: block;
-        content: "";
-        width: 1em;
-        height: 1em;
-        color: #ffdfbe;
-        background-color: #feb567;
-        border-radius: 25%;
-        opacity: 0;
-      }
-
-      .check-box:after {
-        display: block;
-        content: "";
-        width: 0.6em;
-        height: 0.3em;
-        top: 0.2em;
-        left: 0.1em;
-        border-left: 4px solid #ffdfbe;
-        border-bottom: 4px solid #ffdfbe;
-        transform: rotate(0.85turn);
-        background: #feb567;
-        position: absolute;
-        opacity: 0;
-      }
-
-      .input-point:checked + .check-box:before {
-        opacity: 1;
-      }
-
-      .input-point:checked + .check-box:after {
-        opacity: 1;
-      }
+    .title {
+      text-align: center;
+      font-weight: 600;
+      background: #ffca93;
+      padding: 1rem 1.75rem;
     }
-  }
 
-  .deleter {
-    display: inline-block;
-    width: 1.2em;
-    height: 1.3em;
-    color: #feb567;
-    border: 0.1em solid #feb567;
-    border-radius: 25%;
-    vertical-align: middle;
-    position: relative;
-    margin-right: 0.8em;
-    top: -2.25em;
-    left: 29.5em;
-  }
+    .content {
+      padding: 1.75rem;
+      background: $contentBG;
 
-  .deleter:before {
-    content: "\00D7";
-    top: 0.16em;
-    left: 0.35em;
-    position: absolute;
-    margin-right: 0.8em;
-  }
+      .new {
+        width: 100%;
+        padding: 0.5rem 0;
+        text-align: center;
+        color: #ffca93;
+        background-color: #ffecd8;
+        border: 0.125rem dashed #ffca93;
+        border-radius: 0.3rem;
+        cursor: pointer;
 
-  .footer {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 1.75em;
+        &::placeholder {
+          color: #ffca93;
+          padding-left: 0.5rem;
+        }
 
-    .sorting {
-      display: flex;
-      justify-content: space-between;
-      width: 60%;
-
-      input[type="radio"] {
-        display: none;
+        &:focus {
+          outline: none;
+        }
       }
 
-      .sorting-button {
-        border: none;
+      .taskContainer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.5rem;
+        background: $taskBG;
+        border-radius: 0.3rem;
+        margin-bottom: 1.5rem;
 
-        input[type="radio"]:checked + .sorting-type {
-          border: 0.125rem solid #7f4b13;
-          border-radius: 0.3em;
-          padding: 0.125rem 0.25rem;
+        .task {
+          flex: 1 1 auto;
+
+          .input-point {
+            display: none;
+          }
+
+          .check-box {
+            display: inline-block;
+            width: 1rem;
+            height: 1rem;
+            border: 0.1rem solid #feb567;
+            border-radius: 25%;
+            position: relative;
+            margin-right: 0.5rem;
+
+            &:before {
+              display: block;
+              content: "";
+              width: 1rem;
+              height: 1rem;
+              color: #ffdfbe;
+              background-color: #feb567;
+              border-radius: 25%;
+              opacity: 0;
+            }
+
+            &:after {
+              display: block;
+              content: "";
+              width: 0.6rem;
+              height: 0.3rem;
+              top: 0.2rem;
+              left: 0.1rem;
+              border-left: 4px solid #ffdfbe;
+              border-bottom: 4px solid #ffdfbe;
+              transform: rotate(0.85turn);
+              background: #feb567;
+              position: absolute;
+              opacity: 0;
+            }
+          }
+
+          .input-point:checked + .check-box:before {
+            opacity: 1;
+          }
+
+          .input-point:checked + .check-box:after {
+            opacity: 1;
+          }
+        }
+
+        .deleter {
+          flex: 0 0 1.2rem;
+          width: 1.2rem;
+          height: 1.3rem;
+          color: #feb567;
+          border: 0.1rem solid #feb567;
+          border-radius: 25%;
+          position: relative;
+          cursor: pointer;
+
+          &:before {
+            content: "\00D7";
+            left: 0.35rem;
+            position: absolute;
+            margin-right: 0.8rem;
+          }
         }
       }
     }
-  }
 
-  .ready {
-    color: #7f4b13;
-    background-color: #ffdfbe;
-  }
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      padding: 1rem 1.75rem;
+      font-weight: 600;
+      background: #ffca93;
+    
+      .sorting {
+        display: flex;
 
-  .new {
-    text-align: center;
-    color: #ffca93;
-    background-color: #ffecd8;
-    border: 0.125rem dashed #ffca93;
+        input[type="radio"] {
+          display: none;
+        }
+
+        .sorting-button {
+          border: none;
+          margin-left: 0.5rem;
+
+          input[type="radio"]:checked + .sorting-type {
+            border: 0.125rem solid #7f4b13;
+            border-radius: 0.3rem;
+            padding: 0.125rem 0.25rem;
+          }
+        }
+      }
+    }
   }
 }
 </style>

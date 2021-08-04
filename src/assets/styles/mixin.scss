@@ -1,4 +1,4 @@
-@import "variables";
+/*@import "variables";
 
 @mixin permissionBorder($permissNumber, $workWidth) {
   @media (max-width: nth($permission, $permissNumber)) {
@@ -7,7 +7,7 @@
 
       .deleter {
         left: 0em;
-        left: 29.5vw;/* - $permissNumber * 5vw;*/
+        left: 29.5vw;/* - $permissNumber * 5vw;
       }
 
       .footer {
@@ -15,4 +15,4 @@
       }
     }
   }
-}
+}*/
