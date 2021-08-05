@@ -2,26 +2,21 @@
   <div class="taskContainer">
     <label class="task">
       <input type="checkbox" class="input-point" />
-      <span class="check-box"></span>Task 3
+      <span class="check-box"></span> {{ taskN }}
     </label>
     <div class="deleter"></div>
   </div>
 </template>
 
 <script>
-
-import taskContainer from "taskContainer.vue"
-
-export default taskContainer({
-    setup() {
-        return {}
-    },
-})
+export default {
+  props: {
+    taskN: String,
+  },
+};
 </script>
 
-
 <style lang="scss">
-
 @import "./src/assets/styles/variables.scss";
 
 .taskContainer {
@@ -42,9 +37,9 @@ export default taskContainer({
 
     .check-box {
       display: inline-block;
-      width: 0.9rem;
-      height: 0.9rem;
-      border: 0.1rem solid #feb567;
+      width: 1rem;
+      height: 1rem;
+      border: 0.15rem solid #feb567;
       border-radius: 25%;
       position: relative;
       margin-right: 0.5rem;
@@ -52,12 +47,14 @@ export default taskContainer({
       &:before {
         display: block;
         content: "";
-        width: 1rem;
-        height: 1rem;
+        width: 1.2rem;
+        height: 1.2rem;
         color: #ffdfbe;
         background-color: #feb567;
         border-radius: 25%;
         opacity: 0;
+        position: absolute;
+        top: -0.1rem;
       }
 
       &:after {
@@ -65,7 +62,7 @@ export default taskContainer({
         content: "";
         width: 0.6rem;
         height: 0.3rem;
-        top: 0.2rem;
+        top: 0.1rem;
         left: 0.1rem;
         border-left: 4px solid #ffdfbe;
         border-bottom: 4px solid #ffdfbe;
@@ -88,9 +85,9 @@ export default taskContainer({
   .deleter {
     flex: 0 0 1.2rem;
     width: 1.2rem;
-    height: 1.3rem;
+    height: 1.2rem;
     color: #feb567;
-    border: 0.1rem solid #feb567;
+    border: 0.15rem solid #feb567;
     border-radius: 25%;
     position: relative;
     cursor: pointer;
@@ -98,6 +95,7 @@ export default taskContainer({
     &:before {
       content: "\00D7";
       left: 0.35rem;
+      top: -0.1rem;
       position: absolute;
       margin-right: 0.8rem;
     }
