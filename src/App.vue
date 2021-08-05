@@ -3,28 +3,9 @@
     <div class="page">
       <div class="title">to do list</div>
       <div class="content">
-        <div class="taskContainer">
-          <label class="task">
-            <input type="checkbox" class="input-point" checked />
-            <span class="check-box"></span>dsjdsljfl aflkdsfaklfdsl
-            kkldfkldhlksd
-          </label>
-          <div class="deleter"></div>
-        </div>
-        <div class="taskContainer">
-          <label class="task">
-            <input type="checkbox" class="input-point" />
-            <span class="check-box"></span>Task 2
-          </label>
-          <div class="deleter"></div>
-        </div>
-        <div class="taskContainer">
-          <label class="task">
-            <input type="checkbox" class="input-point" />
-            <span class="check-box"></span>Task 3
-          </label>
-          <div class="deleter"></div>
-        </div>
+        <taskContainer></taskContainer>
+        <taskContainer></taskContainer>
+        <taskContainer></taskContainer>
         <input class="new" type="text" placeholder="Add a new task" />
       </div>
       <div class="footer block">
@@ -53,10 +34,16 @@
 </template>
 
 <script>
+
+import taskContainer from './assets/components/content/taskContainer.vue'
+
 export default {
   data() {
     return {};
   },
+  components: {
+    taskContainer
+  }
 };
 </script>
 
@@ -126,8 +113,8 @@ export default {
 
           .check-box {
             display: inline-block;
-            width: 1rem;
-            height: 1rem;
+            width: 0.9rem;
+            height: 0.9rem;
             border: 0.1rem solid #feb567;
             border-radius: 25%;
             position: relative;
