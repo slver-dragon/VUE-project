@@ -1,8 +1,11 @@
 <template>
   <div class="content">
-    <TaskContainer taskN="Task 1" />
-    <TaskContainer taskN="Task 2" />
-    <TaskContainer taskN="Task 3" />
+    <TaskContainer
+      v-for="(taskN, isChecked) in taskData"
+      v-bind:key="taskData.id"
+      v-bind:taskN="taskData.task"
+      v-bind:isChecked="taskData.isChecked"
+    />
     <NewTask />
   </div>
 </template>
@@ -13,11 +16,26 @@ import NewTask from "../atom/NewTask.vue";
 
 export default {
   data() {
+    taskData: [
+      {
+        id: 1,
+        task: "Task 1",
+        isChecked: true,
+      },
+      {
+        task: "Task 2",
+        isChecked: false,
+      },
+      {
+        task: "Task 3",
+        isChecked: false,
+      },
+    ];
     return {};
   },
   components: {
     TaskContainer,
-    NewTask
+    NewTask,
   },
 };
 </script>

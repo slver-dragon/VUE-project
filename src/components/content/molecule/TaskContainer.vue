@@ -2,7 +2,7 @@
   <div class="taskContainer">
     <label class="task">
       <input type="checkbox" class="input-point" />
-      <span class="check-box"></span> {{ taskN }}
+      <span class="check-box" /> {{ taskN }}
     </label>
     <div class="deleter"></div>
   </div>

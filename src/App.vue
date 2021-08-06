@@ -9,9 +9,8 @@
 </template>
 
 <script>
-
-import Content from './components/content/organism/Content.vue'
-import Footer from './components/content/organism/Footer.vue'
+import Content from "./components/content/organism/Content.vue";
+import Footer from "./components/content/organism/Footer.vue";
 
 export default {
   data() {
@@ -19,8 +18,8 @@ export default {
   },
   components: {
     Content,
-    Footer
-  }
+    Footer,
+  },
 };
 </script>
 

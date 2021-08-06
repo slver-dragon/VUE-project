@@ -1,6 +1,6 @@
 <template>
   <label class="sorting-button"
-    ><input type="radio" name="sorter"/>
+    ><input type="radio" name="sorter" />
     <span class="sorting-type">{{ sorting }}</span>
   </label>
 </template>
