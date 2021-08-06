@@ -17,21 +17,20 @@ import NewTask from "../atom/NewTask.vue";
 export default {
   data() {
     return {
-    taskData: [
-      {
-        id: 1,
-        task: "Task 1",
-        isChecked: true,
-      },
-      {
-        task: "Task 2",
-        isChecked: false,
-      },
-      {
-        task: "Task 3",
-        isChecked: false,
-      },
-    ]
+      taskData: [
+        {
+          task: "Task 1",
+          isChecked: true,
+        },
+        {
+          task: "Task 2",
+          isChecked: false,
+        },
+        {
+          task: "Task 3",
+          isChecked: false,
+        },
+      ],
     };
   },
   components: {
