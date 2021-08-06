@@ -1,10 +1,10 @@
 <template>
   <div class="content">
     <TaskContainer
-      v-for="(task, isChecked) in taskData"
-      :key="taskData.id"
-      :taskN="taskData.task"
-      :isChecked="taskData.isChecked"
+      v-for="tasks in taskData"
+      :key="tasks.id"
+      :taskN="tasks.task"
+      :isChecked="tasks.isChecked"
     />
     <NewTask />
   </div>
@@ -19,14 +19,17 @@ export default {
     return {
       taskData: [
         {
+          id: 1,
           task: "Task 1",
-          isChecked: true,
-        },
-        {
-          task: "Task 2",
           isChecked: false,
         },
         {
+          id: 2,
+          task: "Task 2",
+          isChecked: true,
+        },
+        {
+          id: 3,
           task: "Task 3",
           isChecked: false,
         },

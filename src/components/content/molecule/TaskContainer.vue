@@ -1,7 +1,7 @@
 <template>
   <div class="taskContainer">
     <label class="task">
-      <input type="checkbox" class="input-point" />
+      <input type="checkbox" class="input-point" :checked = isChecked />
       <span class="check-box" /> {{ taskN }}
     </label>
     <div class="deleter"></div>
@@ -12,6 +12,7 @@
 export default {
   props: {
     taskN: String,
+    isChecked: Boolean,
   },
 };
 </script>
