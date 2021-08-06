@@ -1,10 +1,10 @@
 <template>
-  <div class="taskContainer">
-    <label class="task">
-      <input type="checkbox" class="input-point" :checked = isChecked />
-      <span class="check-box" /> {{ taskN }}
+  <div :class="$style.taskContainer">
+    <label :class="$style.task">
+      <input type="checkbox" :class="$style.inputPoint" :checked = isChecked />
+      <span :class="$style.checkBox" /> {{ taskN }}
     </label>
-    <div class="deleter"></div>
+    <div :class="$style.deleter"></div>
   </div>
 </template>
 
@@ -17,7 +17,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" module>
 @import "./src/assets/styles/variables.scss";
 
 .taskContainer {
@@ -32,11 +32,11 @@ export default {
   .task {
     flex: 1 1 auto;
 
-    .input-point {
+    .inputPoint {
       display: none;
     }
 
-    .check-box {
+    .checkBox {
       display: inline-block;
       width: 1rem;
       height: 1rem;
@@ -74,11 +74,11 @@ export default {
       }
     }
 
-    .input-point:checked + .check-box:before {
+    .inputPoint:checked + .checkBox:before {
       opacity: 1;
     }
 
-    .input-point:checked + .check-box:after {
+    .inputPoint:checked + .checkBox:after {
       opacity: 1;
     }
   }

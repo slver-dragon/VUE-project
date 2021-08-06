@@ -1,10 +1,11 @@
 <template>
-  <div class="footer">
+  <div :class="$style.footer">
     <p>1/3 left</p>
-    <div class="sorting">
-      <Radio sorting="All" />
-      <Radio sorting="Active" />
-      <Radio sorting="Complete" />
+    <div :class="$style.sorting">
+      <Radio v-for="sort in sortData"
+      :key="sort.id"
+      :sorting="sort.type"
+      :isPicked="sort.isPicked" />
     </div>
   </div>
 </template>
@@ -14,7 +15,25 @@ import Radio from "../molecule/Radio.vue";
 
 export default {
   data() {
-    return {};
+    return {
+      sortData: [
+        {
+          id: 1,
+          type: "All",
+          isPicked: true,
+        },
+        {
+          id: 2,
+          type: "Active",
+          isPicked: false,
+        },
+        {
+          id: 3,
+          type: "Complete",
+          isPicked: false,
+        },
+      ],
+    };
   },
   components: {
     Radio,
@@ -22,7 +41,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" module>
 .footer {
   display: flex;
   justify-content: space-between;

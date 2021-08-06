@@ -1,10 +1,10 @@
 <template>
-  <input class="new" type="text" placeholder="Add a new task" />
+  <input :class="$style.new" type="text" placeholder="Add a new task" />
 </template>
 
 <script></script>
 
-<style lang="scss">
+<style lang="scss" module>
 .new {
   width: 100%;
   padding: 0.5rem 0;

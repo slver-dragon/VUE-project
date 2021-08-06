@@ -1,5 +1,5 @@
 <template>
-  <div class="content">
+  <div :class="$style.content">
     <TaskContainer
       v-for="tasks in taskData"
       :key="tasks.id"
@@ -43,7 +43,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" module>
 @import "../../../assets/styles/variables.scss";
 
 .content {
