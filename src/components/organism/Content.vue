@@ -44,7 +44,7 @@ export default {
 </script>
 
 <style lang="scss" module>
-@import "../../../assets/styles/variables.scss";
+@import "../../assets/styles/variables.scss";
 
 .content {
   padding: 1.75rem;

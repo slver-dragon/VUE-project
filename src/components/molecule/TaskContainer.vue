@@ -1,7 +1,7 @@
 <template>
   <div :class="$style.taskContainer">
     <label :class="$style.task">
-      <input type="checkbox" :class="$style.inputPoint" :checked = isChecked />
+      <input type="checkbox" :class="$style.inputPoint" :checked = "isChecked" />
       <span :class="$style.checkBox" /> {{ taskN }}
     </label>
     <div :class="$style.deleter"></div>

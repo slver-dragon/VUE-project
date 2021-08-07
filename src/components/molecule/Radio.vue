@@ -1,6 +1,6 @@
 <template>
   <label :class="$style.sortingButton"
-    ><input type="radio" name="sorter" :checked = isPicked />
+    ><input type="radio" name="sorter" :checked = "isPicked" />
     <span :class="$style.sortingType">{{ sorting }}</span>
   </label>
 </template>
