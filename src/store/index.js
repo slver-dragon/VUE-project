@@ -57,12 +57,28 @@ export default new Vuex.Store({
     completedTaskCount(state) {
       return state.taskData.filter((i) => i.isChecked).length;
     },
+
+    /*completedTaskSort(state) {
+      return state.taskData.filter((i) => i.isChecked);
+    },*/
   },
 
   mutations: {
-    check() {
-      console.log("yoo");
+    changeTaskStatus(state, id) {
+      state.taskData = state.taskData.map((i) =>
+        i.id === id ? { ...i, isChecked: !i.isChecked } : i
+      );
     },
+
+    deleteTask(state, id) {
+      state.taskData.splice(id - 1, 1);
+      for (let i = 0; i < state.taskData.length; i++) {
+        state.taskData[i].id = i + 1;
+      }
+    },
+
+    addTask(state,task) {
+      state.taskData.push({id:state.taskData.length + 1,task:task,isChecked:false});
+    }
   },
-  //actions: {}
 });

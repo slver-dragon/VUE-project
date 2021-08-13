@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div class="page">
-      <div class="title" @click="a">Список задач</div>
+      <div class="title">Список задач</div>
       <Content />
       <Footer />
     </div>
@@ -11,15 +11,8 @@
 <script>
 import Content from "./components/organism/Content.vue";
 import Footer from "./components/organism/Footer.vue";
-import {mapMutations} from "vuex"
 
 export default {
-  methods: {
-    ...mapMutations(["check"]),
-    a() {
-      this.check();
-    }
-  },
   
   data() {
     return {};
