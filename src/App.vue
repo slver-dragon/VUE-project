@@ -16,7 +16,7 @@ import {mapMutations} from "vuex"
 export default {
   methods: {
     ...mapMutations(["check"]),
-    a () {
+    a() {
       this.check();
     }
   },

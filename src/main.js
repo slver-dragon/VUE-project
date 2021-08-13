@@ -1,12 +1,12 @@
 import Vue from 'vue'
-import Vuex from 'vuex'
-import Store from './store/index'
+//import Vuex from 'vuex'
+import store from './store'
 import App from './App.vue'
 
 Vue.config.productionTip = false
-Vue.use(Vuex)
+//Vue.use(Vuex)
 
 new Vue({
-  Store,
+  store,
   render: h => h(App),
 }).$mount('#app')

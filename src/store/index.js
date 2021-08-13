@@ -53,12 +53,16 @@ export default new Vuex.Store({
     allTaskLength(state) {
       return state.taskData.length;
     },
-     
+
     completedTaskCount(state) {
-      return state.taskData.filter ( i => i.isChecked).length
-    }
+      return state.taskData.filter((i) => i.isChecked).length;
+    },
   },
-  
-  /*mutations: {},
-  actions: {}*/
+
+  mutations: {
+    check() {
+      console.log("yoo");
+    },
+  },
+  //actions: {}
 });
