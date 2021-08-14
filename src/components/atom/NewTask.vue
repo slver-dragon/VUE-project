@@ -1,30 +1,8 @@
 <template>
-  <input :class="$style.new" type="text" placeholder="Add a new task" v-model="newTask" v-on:keyup.enter="add" />
+  <input :class="$style.new" type="text" placeholder="Add a new task" />
 </template>
 
-<script>
-import {mapMutations} from "vuex"
-
-export default {
- 
-  data () {
-    return {
-      newTask: ''
-    }
-    
-  },
-
-  methods: {
-    ...mapMutations(["addTask"]),
-    
-    add() {
-      this.addTask(this.newTask);
-      this.newTask = ''
-    },
-
-  }
-}
-</script>
+<script></script>
 
 <style lang="scss" module>
 .new {
@@ -44,7 +22,6 @@ export default {
 
   &:focus {
     outline: none;
-    color: #7f4b13;
   }
 }
 </style>

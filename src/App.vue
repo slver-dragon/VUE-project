@@ -13,7 +13,6 @@ import Content from "./components/organism/Content.vue";
 import Footer from "./components/organism/Footer.vue";
 
 export default {
-  
   data() {
     return {};
   },
