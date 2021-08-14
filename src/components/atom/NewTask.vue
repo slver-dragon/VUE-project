@@ -44,6 +44,7 @@ export default {
 
   &:focus {
     outline: none;
+    color: #7f4b13;
   }
 }
 </style>

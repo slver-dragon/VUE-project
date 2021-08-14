@@ -1,7 +1,7 @@
 <template>
   <div :class="$style.content">
     <TaskContainer
-      v-for="tasks in allTasks"
+      v-for="tasks in displayTaskSort"
       :key="tasks.id"
       :taskN="tasks.task"
       :isChecked="tasks.isChecked"
@@ -17,7 +17,8 @@ import NewTask from "../atom/NewTask.vue";
 import {mapGetters} from "vuex";
 
 export default {
-  computed: mapGetters(["allTasks","completedTaskSort"]),
+  
+  computed: mapGetters(["displayTaskSort"]),
   components: {
     TaskContainer,
     NewTask,

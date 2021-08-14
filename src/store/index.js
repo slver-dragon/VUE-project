@@ -55,12 +55,16 @@ export default new Vuex.Store({
     },
 
     completedTaskCount(state) {
-      return state.taskData.filter((i) => i.isChecked).length;
+      return state.taskData.filter((i) => !i.isChecked).length;
     },
-
-    /*completedTaskSort(state) {
-      return state.taskData.filter((i) => i.isChecked);
-    },*/
+    
+    displayTaskSort(state) {
+      switch (state.sortData.filter((i) => i.isPicked)[0].id) {
+        case 3: return state.taskData.filter((i) => i.isChecked);
+        case 2: return state.taskData.filter((i) => !i.isChecked);
+        default: return state.taskData;
+      }
+    }
   },
 
   mutations: {
@@ -79,6 +83,10 @@ export default new Vuex.Store({
 
     addTask(state,task) {
       state.taskData.push({id:state.taskData.length + 1,task:task,isChecked:false});
+    },
+
+    changeRadio(state,btnId) {
+      state.sortData = state.sortData.map((i) => i.id === btnId ? { ...i, isPicked: true } : { ...i, isPicked: false });
     }
   },
 });
