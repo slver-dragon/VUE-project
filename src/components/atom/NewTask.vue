@@ -6,15 +6,20 @@
 import {mapMutations} from "vuex"
 
 export default {
-  props: {
-    newTask: String,
+ 
+  data () {
+    return {
+      newTask: ''
+    }
+    
   },
 
   methods: {
     ...mapMutations(["addTask"]),
     
     add() {
-      this.addTask(this.newTask)
+      this.addTask(this.newTask);
+      this.newTask = ''
     },
 
   }
