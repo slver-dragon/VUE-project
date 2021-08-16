@@ -11,15 +11,24 @@
 <script>
 import Content from "./components/organism/Content.vue";
 import Footer from "./components/organism/Footer.vue";
+import { mapMutations } from "vuex";
 
 export default {
-  
+
   data() {
     return {};
   },
   components: {
     Content,
     Footer,
+  },
+
+  methods: {
+    ...mapMutations(["loadData"]),
+  },
+
+  mounted : function () {
+    this.loadData()
   },
 };
 </script>

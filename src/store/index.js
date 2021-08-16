@@ -57,14 +57,17 @@ export default new Vuex.Store({
     completedTaskCount(state) {
       return state.taskData.filter((i) => i.isChecked).length;
     },
-    
+
     displayTaskSort(state) {
       switch (state.sortData.filter((i) => i.isPicked)[0].id) {
-        case 3: return state.taskData.filter((i) => !i.isChecked);
-        case 2: return state.taskData.filter((i) => i.isChecked);
-        default: return state.taskData;
+        case 3:
+          return state.taskData.filter((i) => !i.isChecked);
+        case 2:
+          return state.taskData.filter((i) => i.isChecked);
+        default:
+          return state.taskData;
       }
-    }
+    },
   },
 
   mutations: {
@@ -81,12 +84,33 @@ export default new Vuex.Store({
       }
     },
 
-    addTask(state,task) {
-      state.taskData.push({id:state.taskData.length + 1,task:task,isChecked:true});
+    addTask(state, task) {
+      state.taskData.push({
+        id: state.taskData.length + 1,
+        task: task,
+        isChecked: true,
+      });
     },
 
-    changeRadio(state,btnId) {
-      state.sortData = state.sortData.map((i) => i.id === btnId ? { ...i, isPicked: true } : { ...i, isPicked: false });
-    }
+    changeRadio(state, btnId) {
+      state.sortData = state.sortData.map((i) =>
+        i.id === btnId ? { ...i, isPicked: true } : { ...i, isPicked: false }
+      );
+    },
+
+    saveData(state) {
+      let parsed = JSON.stringify(state.taskData);
+      localStorage.setItem("todo", parsed);
+    },
+
+    loadData(state) {
+      if (localStorage.getItem("todo")) {
+        try {
+          state.taskData = JSON.parse(localStorage.getItem("todo"));
+        } catch {
+          localStorage.removeItem("todo");
+        }
+      }
+    },
   },
 });

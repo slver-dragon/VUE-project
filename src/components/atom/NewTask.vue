@@ -15,11 +15,12 @@ export default {
   },
 
   methods: {
-    ...mapMutations(["addTask"]),
+    ...mapMutations(["addTask","saveData"]),
     
     add() {
       this.addTask(this.newTask);
-      this.newTask = ''
+      this.newTask = '';
+      this.saveData();
     },
 
   }

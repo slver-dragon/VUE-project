@@ -20,13 +20,17 @@ export default {
   },
 
   methods: {
-    ...mapMutations(["changeTaskStatus","deleteTask","addTask"]),
+    ...mapMutations(["changeTaskStatus","deleteTask","addTask","saveData"]),
     change() {
-      this.changeTaskStatus(this.id)
+      this.changeTaskStatus(this.id);
+      this.saveData();
+      
     },
 
     clear() {
-      this.deleteTask(this.id)
+      this.deleteTask(this.id);
+      this.saveData();
+     
     },
   }
 };
