@@ -1,7 +1,12 @@
 <template>
   <div :class="$style.taskContainer">
     <label :class="$style.task">
-      <input type="checkbox" :class="$style.inputPoint" :checked = "isChecked" @click="change"/>
+      <input
+        type="checkbox"
+        :class="$style.inputPoint"
+        :checked="isChecked"
+        @click="change"
+      />
       <span :class="$style.checkBox" /> {{ taskN }}
     </label>
     <div :class="$style.deleter" @click="clear"></div>
@@ -9,8 +14,7 @@
 </template>
 
 <script>
-
-import {mapMutations} from "vuex"
+import { mapMutations } from "vuex";
 
 export default {
   props: {
@@ -20,19 +24,17 @@ export default {
   },
 
   methods: {
-    ...mapMutations(["changeTaskStatus","deleteTask","addTask","saveData"]),
+    ...mapMutations(["changeTaskStatus", "deleteTask", "addTask", "saveData"]),
     change() {
       this.changeTaskStatus(this.id);
       this.saveData();
-      
     },
 
     clear() {
       this.deleteTask(this.id);
       this.saveData();
-     
     },
-  }
+  },
 };
 </script>
 

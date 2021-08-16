@@ -1,29 +1,33 @@
 <template>
   <label :class="$style.sortingButton"
-    ><input type="radio" name="sorter" :checked = "isPicked" :id = "id" @click="change"/>
+    ><input
+      type="radio"
+      name="sorter"
+      :checked="isPicked"
+      :id="id"
+      @click="change"
+    />
     <span :class="$style.sortingType">{{ sorting }}</span>
   </label>
 </template>
 
 <script>
-import {mapMutations} from "vuex"
+import { mapMutations } from "vuex";
 
 export default {
   props: {
     sorting: String,
     isPicked: Boolean,
-    id: Number
+    id: Number,
   },
 
   methods: {
     ...mapMutations(["changeRadio"]),
     change() {
-      this.changeRadio(this.id)
+      this.changeRadio(this.id);
     },
-
-  }
+  },
 };
-
 </script>
 
 <style lang="scss" module>

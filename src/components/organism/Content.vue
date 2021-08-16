@@ -14,10 +14,9 @@
 <script>
 import TaskContainer from "../molecule/TaskContainer.vue";
 import NewTask from "../atom/NewTask.vue";
-import {mapGetters} from "vuex";
+import { mapGetters } from "vuex";
 
 export default {
-  
   computed: mapGetters(["displayTaskSort"]),
   components: {
     TaskContainer,

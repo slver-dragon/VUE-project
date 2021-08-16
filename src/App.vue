@@ -14,7 +14,6 @@ import Footer from "./components/organism/Footer.vue";
 import { mapMutations } from "vuex";
 
 export default {
-
   data() {
     return {};
   },
@@ -27,8 +26,8 @@ export default {
     ...mapMutations(["loadData"]),
   },
 
-  mounted : function () {
-    this.loadData()
+  mounted: function() {
+    this.loadData();
   },
 };
 </script>
