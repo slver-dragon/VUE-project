@@ -1,40 +1,23 @@
 <template>
   <div :class="$style.footer">
-    <p>1/3 left</p>
+    <p>{{ completedTaskCount }}/{{ allTaskLength }} left</p>
     <div :class="$style.sorting">
-      <Radio v-for="sort in sortData"
+      <Radio v-for="sort in radioBnt"
       :key="sort.id"
       :sorting="sort.type"
-      :isPicked="sort.isPicked" />
+      :isPicked="sort.isPicked"
+      :id="sort.id" />
     </div>
   </div>
 </template>
 
 <script>
 import Radio from "../molecule/Radio.vue";
+import {mapGetters} from "vuex"
 
 export default {
-  data() {
-    return {
-      sortData: [
-        {
-          id: 1,
-          type: "All",
-          isPicked: true,
-        },
-        {
-          id: 2,
-          type: "Active",
-          isPicked: false,
-        },
-        {
-          id: 3,
-          type: "Complete",
-          isPicked: false,
-        },
-      ],
-    };
-  },
+  computed: mapGetters (["allTaskLength","completedTaskCount","radioBnt"]),
+  
   components: {
     Radio,
   },
