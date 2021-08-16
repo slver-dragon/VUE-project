@@ -1,11 +1,10 @@
 <template>
   <div :class="$style.content">
     <TaskContainer
-      v-for="tasks in displayTaskSort"
+      v-for="tasks in taskData"
       :key="tasks.id"
       :taskN="tasks.task"
       :isChecked="tasks.isChecked"
-      :id="tasks.id"
     />
     <NewTask />
   </div>
@@ -14,11 +13,29 @@
 <script>
 import TaskContainer from "../molecule/TaskContainer.vue";
 import NewTask from "../atom/NewTask.vue";
-import {mapGetters} from "vuex";
 
 export default {
-  
-  computed: mapGetters(["displayTaskSort"]),
+  data() {
+    return {
+      taskData: [
+        {
+          id: 1,
+          task: "Task 1",
+          isChecked: false,
+        },
+        {
+          id: 2,
+          task: "Task 2",
+          isChecked: true,
+        },
+        {
+          id: 3,
+          task: "Task 3",
+          isChecked: false,
+        },
+      ],
+    };
+  },
   components: {
     TaskContainer,
     NewTask,
