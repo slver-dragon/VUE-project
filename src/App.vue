@@ -26,7 +26,7 @@ export default {
     ...mapMutations(["loadData"]),
   },
 
-  mounted: function() {
+  mounted () {
     this.loadData();
   },
 };
