@@ -1,6 +1,7 @@
 import Vuex from "Vuex";
 import { mount, createLocalVue } from "@vue/test-utils";
 import Container from "@/components/molecule/TaskContainer.vue";
+import mutations from "@/components/store/index.js"
 
 let localVue = createLocalVue();
 localVue.use(Vuex);
@@ -26,4 +27,6 @@ describe("Task element", () => {
     console.log(changer);
     /*добавить обработку мутации*/
   });
+
+  
 });
