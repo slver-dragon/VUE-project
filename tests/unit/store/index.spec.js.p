@@ -1,6 +1,6 @@
 import Vuex from "Vuex";
 import { createLocalVue } from "@vue/test-utils";
-import store from "@/components/store/index.js";
+import store from "@/../../src/store/index.js";
 
 let localVue = createLocalVue();
 localVue.use(Vuex);

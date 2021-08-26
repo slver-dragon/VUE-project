@@ -1,10 +1,12 @@
 import Vuex from "Vuex";
 import { mount, createLocalVue } from "@vue/test-utils";
 import Container from "@/components/molecule/TaskContainer.vue";
-import mutations from "@/components/store/index.js"
+import Store from "../../../../src/store/index";
 
 let localVue = createLocalVue();
 localVue.use(Vuex);
+
+
 
 describe("Task element", () => {
   test("element present", () => {
@@ -20,12 +22,15 @@ describe("Task element", () => {
     expect(changer.element.checked).toBeTruthy();
   });
 
+  let state = Store.state;
+
   test("delete task from list", async () => {
     let wrapper = mount(Container, { localVue });
     let changer = wrapper.findAll("div").at(1);
     await changer.trigger("click");
-    console.log(changer);
-    /*добавить обработку мутации*/
+    state.mutations.deleteTask(1);
+    console.log(Store.state.taskData.length - state.taskData.length);
+    /*expect(state.taskData.length === )*/
   });
 
   

@@ -24,7 +24,7 @@ export default {
   },
 
   methods: {
-    ...mapMutations(["changeTaskStatus", "deleteTask", "addTask", "saveData"]),
+    ...mapMutations(["changeTaskStatus", "deleteTask", "saveData"]),
     change() {
       this.changeTaskStatus(this.id);
       this.saveData();
