@@ -6,16 +6,23 @@ let localVue = createLocalVue();
 localVue.use(Vuex);
 
 describe("Radio element", () => {
+  let mutations;
+  let store;
+
+  beforeEach(() => {
+    mutations = { changeRadio: jest.fn() };
+    store = new Vuex.Store({ mutations });
+  });
+
   test("element present", () => {
     let wrapper = mount(Radio, { localVue });
     expect(wrapper.vm).toBeTruthy();
     expect(wrapper.is(Radio)).toBeTruthy();
   });
 
-  test("changes status with click", async () => {
-    let wrapper = mount(Radio, { localVue });
-    let changer = wrapper.find('input[type = "radio"]');
-    await changer.trigger('click');
-    expect(changer.element.checked).toBeTruthy();
+  test("change status with click", () => {
+    let wrapper = mount(Radio, { store, localVue });
+    wrapper.find('input[type = "radio"]').trigger("click");
+    expect(mutations.changeRadio).toHaveBeenCalled();
   });
 });

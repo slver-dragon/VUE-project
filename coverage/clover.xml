@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1629963575970" clover="3.2.0">
-  <project timestamp="1629963575970" name="All files">
-    <metrics statements="40" coveredstatements="13" conditionals="9" coveredconditionals="0" methods="22" coveredmethods="4" elements="71" coveredelements="17" complexity="0" loc="40" ncloc="40" packages="4" files="6" classes="6"/>
+<coverage generated="1630062871039" clover="3.2.0">
+  <project timestamp="1630062871039" name="All files">
+    <metrics statements="40" coveredstatements="22" conditionals="9" coveredconditionals="0" methods="22" coveredmethods="10" elements="71" coveredelements="32" complexity="0" loc="40" ncloc="40" packages="4" files="6" classes="6"/>
     <package name="components.atom">
-      <metrics statements="5" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
+      <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
       <file name="NewTask.vue" path="D:\GitHub\vue-project\src\components\atom\NewTask.vue">
-        <metrics statements="5" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
+        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
         <line num="12" count="2" type="stmt"/>
-        <line num="17" count="2" type="stmt"/>
-        <line num="26" count="0" type="stmt"/>
-        <line num="27" count="0" type="stmt"/>
-        <line num="28" count="0" type="stmt"/>
+        <line num="17" count="3" type="stmt"/>
+        <line num="26" count="1" type="stmt"/>
+        <line num="27" count="1" type="stmt"/>
+        <line num="28" count="1" type="stmt"/>
       </file>
     </package>
     <package name="components.molecule">
-      <metrics statements="7" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+      <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
       <file name="Radio.vue" path="D:\GitHub\vue-project\src\components\molecule\Radio.vue">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="15" count="2" type="stmt"/>
         <line num="27" count="1" type="stmt"/>
       </file>
       <file name="TaskContainer.vue" path="D:\GitHub\vue-project\src\components\molecule\TaskContainer.vue">
-        <metrics statements="5" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
         <line num="17" count="2" type="stmt"/>
         <line num="29" count="1" type="stmt"/>
-        <line num="30" count="0" type="stmt"/>
+        <line num="30" count="1" type="stmt"/>
         <line num="34" count="1" type="stmt"/>
-        <line num="35" count="0" type="stmt"/>
+        <line num="35" count="1" type="stmt"/>
       </file>
     </package>
     <package name="components.organism">
@@ -44,14 +44,14 @@
       </file>
     </package>
     <package name="store">
-      <metrics statements="23" coveredstatements="1" conditionals="9" coveredconditionals="0" methods="17" coveredmethods="0"/>
+      <metrics statements="23" coveredstatements="5" conditionals="9" coveredconditionals="0" methods="17" coveredmethods="5"/>
       <file name="index.js" path="D:\GitHub\vue-project\src\store\index.js">
-        <metrics statements="23" coveredstatements="1" conditionals="9" coveredconditionals="0" methods="17" coveredmethods="0"/>
+        <metrics statements="23" coveredstatements="5" conditionals="9" coveredconditionals="0" methods="17" coveredmethods="5"/>
         <line num="4" count="1" type="stmt"/>
-        <line num="46" count="0" type="stmt"/>
-        <line num="50" count="0" type="stmt"/>
-        <line num="54" count="0" type="stmt"/>
-        <line num="58" count="0" type="stmt"/>
+        <line num="46" count="1" type="stmt"/>
+        <line num="50" count="1" type="stmt"/>
+        <line num="54" count="1" type="stmt"/>
+        <line num="58" count="3" type="stmt"/>
         <line num="62" count="0" type="cond" truecount="0" falsecount="3"/>
         <line num="64" count="0" type="stmt"/>
         <line num="66" count="0" type="stmt"/>
