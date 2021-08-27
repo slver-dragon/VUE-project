@@ -1,34 +1,22 @@
-import Vuex from "Vuex";
-import { createLocalVue } from "@vue/test-utils";
-import Container from "../../../src/store/index"
+import storeConfig from "./store.cfg"
 
-let localVue = createLocalVue();
-localVue.use(Vuex);
-
-const store = new Vuex.Store({
-  state: {
-    taskData: [],
-    sortData: [],
-    getters: Container.getters,
-  },
-  mutations: Container.mutations,
-})
+const store = storeConfig;
 
 describe("store testing", () => {
   it("return all tasks", () => {
-    expect(store.state.getters.allTasks.length).toBe(3)
+    expect(store.getters.allTasks.length).toBe(3)
   });
 
   it("return all sorting", () => {
-    expect(store.state.getters.radioBnt.length).toBe(3)
+    expect(store.getters.radioBnt.length).toBe(3)
   });
 
   it("number of all tasks", () => {
-    expect(store.state.getters.allTaskLength).toBe(3)
+    expect(store.getters.allTaskLength).toBe(3)
   });
 
   it("number of all completed tasks", () => {
-    expect(store.state.getters.completedTaskCount).toBe(1)
+    expect(store.getters.completedTaskCount).toBe(1)
   });
 
   /*it("sorting type", () => {
