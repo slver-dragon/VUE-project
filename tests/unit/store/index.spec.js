@@ -1,22 +1,22 @@
-import storeConfig from "./store.cfg"
+import storeConfig from "./store.cfg";
 
 const store = storeConfig;
 
 describe("store testing", () => {
   it("return all tasks", () => {
-    expect(store.getters.allTasks.length).toBe(3)
+    expect(store.getters.allTasks.length).toBe(3);
   });
 
   it("return all sorting", () => {
-    expect(store.getters.radioBnt.length).toBe(3)
+    expect(store.getters.radioBnt.length).toBe(3);
   });
 
   it("number of all tasks", () => {
-    expect(store.getters.allTaskLength).toBe(3)
+    expect(store.getters.allTaskLength).toBe(3);
   });
 
   it("number of all completed tasks", () => {
-    expect(store.getters.completedTaskCount).toBe(1)
+    expect(store.getters.completedTaskCount).toBe(1);
   });
 
   /*it("sorting type", () => {
@@ -25,52 +25,13 @@ describe("store testing", () => {
     expect(store.state.getters.displayTaskSort.type).toEqual("")
   });*/
 
-  it("change task status", () => {
-    console.log(store.mutations);
-  })
+  /*it("change task status", () => {});*/
+
+  it("delete task", () => {
+    let givenIndex = 1;
+    store.commit("deleteTask", givenIndex);
+    expect(store.state.taskData).toStrictEqual(
+      store.state.taskData.splice(givenIndex, 1)
+    );
+  });
 });
-
-/*import { shallowMount, createLocalVue } from '@vue/test-utils'
-import Vuex from 'vuex'
-import Actions from '../../../src/components/Actions'
-
-const localVue = createLocalVue()
-
-localVue.use(Vuex)
-
-describe('Actions.vue', () => {
-  let actions
-  let store
-
-  beforeEach(() => {
-    actions = {
-      actionClick: jest.fn(),
-      actionInput: jest.fn()
-    }
-    store = new Vuex.Store({
-      actions
-    })
-  })
-
-  it('вызывает "actionInput", когда значение события — "input"', () => {
-    const wrapper = shallowMount(Actions, { store, localVue })
-    const input = wrapper.find('input')
-    input.element.value = 'input'
-    input.trigger('input')
-    expect(actions.actionInput).toHaveBeenCalled()
-  })
-
-  it('не вызывает "actionInput", когда значение события не "input"', () => {
-    const wrapper = shallowMount(Actions, { store, localVue })
-    const input = wrapper.find('input')
-    input.element.value = 'not input'
-    input.trigger('input')
-    expect(actions.actionInput).not.toHaveBeenCalled()
-  })
-
-  it('вызывает действие хранилища "actionClick" по нажатию кнопки', () => {
-    const wrapper = shallowMount(Actions, { store, localVue })
-    wrapper.find('button').trigger('click')
-    expect(actions.actionClick).toHaveBeenCalled()
-  })
-})*/

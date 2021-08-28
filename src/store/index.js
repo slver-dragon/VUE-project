@@ -62,7 +62,7 @@ export default new Vuex.Store({
       switch (state.sortData.filter((i) => i.isPicked)[0].id) {
         case 3:
           return state.taskData.filter((i) => !i.isChecked);
-        case 2:
+        case 2:z
           return state.taskData.filter((i) => i.isChecked);
         default:
           return state.taskData;
