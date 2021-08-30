@@ -1,13 +1,18 @@
+import Vuex from "vuex";
+import {createLocalVue } from "@vue/test-utils";
 import storeConfig from "./store.cfg";
 
+const localVue = createLocalVue ();
+localVue.use (Vuex)
 const store = storeConfig;
 
 describe("store testing", () => {
   it("return all tasks", () => {
+    console.log(store.getters.allTasks)
     expect(store.getters.allTasks.length).toBe(3);
   });
 
-  it("return all sorting", () => {
+  /*it("return all sorting", () => {
     expect(store.getters.radioBnt.length).toBe(3);
   });
 
@@ -39,15 +44,15 @@ describe("store testing", () => {
     expect(store.getters.displayTaskSort.length).toBe(3);
     store.state.buttonTitle = "Completed";
     expect(store.getters.displayTaskSort.length).toBe(0);*/
-  });
+  /*});
 
   /*it("change task status", () => {});*/
 
-  it("delete task", () => {
+  /*it("delete task", () => {
     let givenIndex = 1;
     store.commit("deleteTask", givenIndex);
     expect(store.state.taskData).toStrictEqual(
       store.state.taskData.splice(givenIndex, 1)
     );
-  });
+  });*/
 });

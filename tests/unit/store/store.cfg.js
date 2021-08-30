@@ -1,4 +1,4 @@
-import vuex from "@/store/index";
+import vuex from "../../../src/store/modules/todo";
 
 export default {
   state: {
