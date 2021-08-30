@@ -19,11 +19,27 @@ describe("store testing", () => {
     expect(store.getters.completedTaskCount).toBe(1);
   });
 
-  /*it("sorting type", () => {
+  it("sorting type", () => {
+    /*console.log(store.getters.displayTaskSort);
+    /*console.log(store.getters.displayTaskSort);
+    console.log(store.getters.displayTaskSort);
+    /*store.state.filter = "All";
+    expect(store.getters.displayTaskSort).toStrictEqual(store.state.taskData);
+    store.state.filter = "Active";
+    expect(store.getters.displayTaskSort.length).toBe(1);
+    store.state.filter = "Completed";
+    expect(store.getters.displayTaskSort.length).toBe(0);
 
     /*console.log(store.state.getters.displayTaskSort)
     expect(store.state.getters.displayTaskSort.type).toEqual("")
-  });*/
+
+    store.state.buttonTitle = "All";
+    expect(store.getters.displayTaskSort).toStrictEqual(store.state.taskData);
+    store.state.buttonTitle = "Active";
+    expect(store.getters.displayTaskSort.length).toBe(3);
+    store.state.buttonTitle = "Completed";
+    expect(store.getters.displayTaskSort.length).toBe(0);*/
+  });
 
   /*it("change task status", () => {});*/
 
