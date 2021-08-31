@@ -36,7 +36,6 @@ export default {
         isPicked: false,
       },
     ],
-    buttonTitle: "All",
   },
   mutations: vuex.mutations,
   getters: vuex.getters,
