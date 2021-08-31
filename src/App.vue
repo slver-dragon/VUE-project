@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div class="page">
-      <div class="title">Список задач</div>
+      <h1 class="title">Список задач</h1>
       <Content />
       <Footer />
     </div>
@@ -26,7 +26,7 @@ export default {
     ...mapMutations(["loadData"]),
   },
 
-  mounted: function() {
+  mounted () {
     this.loadData();
   },
 };
